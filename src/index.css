@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  @apply bg-ink-950 font-sans text-bone antialiased;
+  min-height: 100dvh;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+h1, h2, h3 { @apply font-display; letter-spacing: -0.015em; }
+
+:focus-visible { outline: 2px solid #FDC51A; outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+@layer components {
+  /* Botão principal: amarelo do logotipo */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-gold-sheen px-6 py-3.5
+           font-sans text-base font-bold text-bronze-900 shadow-glow transition
+           hover:brightness-105 active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  /* Botão secundário: bronze das artes de horário */
+  .btn-bronze {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-bronze-sheen px-5 py-3
+           font-sans text-base font-semibold text-bone transition
+           hover:brightness-110 active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-ink-700 px-5 py-3
+           font-sans font-semibold text-bone transition hover:border-motta hover:text-motta;
+  }
+  .surface { @apply rounded-3xl border border-ink-700/70 bg-ink-900; }
+  .field {
+    @apply w-full rounded-xl border border-ink-700 bg-ink-800 px-4 py-3 text-bone
+           placeholder:text-bone/40 focus:border-motta focus:outline-none;
+  }
+  .tag-demo {
+    @apply rounded-full bg-bronze-700/60 px-2.5 py-0.5 text-xs font-semibold text-motta-soft;
+  }
+}

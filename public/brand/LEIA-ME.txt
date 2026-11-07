@@ -1,0 +1,2 @@
+logo-los-motta.png   -> recorte do logotipo enviado (baixa resolução). Troque pelo arquivo original em alta (PNG transparente ou SVG).
+pizza-reference.jpg  -> foto de referência enviada (baixa resolução). Trocar por fotos oficiais no painel.
